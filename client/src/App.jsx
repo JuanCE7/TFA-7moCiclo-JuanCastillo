@@ -12,7 +12,7 @@ import TasksPage from "./pages/TasksPage";
 import ProfilePage from "./pages/ProfilePage";
 import HomePage from "./pages/HomePage";
 import ProtectedRoute from "./ProtectedRoute";
-
+//pgina inicial
 function App() {
   return (
     <AuthProvider>
