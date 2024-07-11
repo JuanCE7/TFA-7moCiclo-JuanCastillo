@@ -1,19 +1,12 @@
-module.exports = {
-  // Configuración global de ESLint
+import globals from 'globals';
+import pluginJs from '@eslint/js';
+
+export default {
   globals: {
-    // Configuración de variables globales específicas, como globals.browser
-    // Asegúrate de definir globals.browser correctamente
-    globals: 'globals.browser'
+    globals: 'globals.browser',
   },
-  // Configuraciones recomendadas del plugin JS de ESLint
-  extends: [
-    'plugin:js/recommended'
-    // Otras extensiones recomendadas si las necesitas
-  ],
-  // Reglas adicionales o personalizadas
+  extends: ['plugin:js/recommended'],
   rules: {
-    // Aquí puedes agregar reglas adicionales o personalizadas
-    // Ejemplo:
-    // 'constructor-super': 'error',
+    // tus reglas
   },
 };
