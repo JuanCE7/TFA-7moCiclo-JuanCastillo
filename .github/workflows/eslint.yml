@@ -19,7 +19,7 @@ jobs:
       run: npm install
 
     - name: Run ESLint
-      run: npx eslint . --ext .js,.jsx,.ts,.tsx
+      run: npx eslint .
     
     - name: Clear npm cache
       run: npm cache clean --force
