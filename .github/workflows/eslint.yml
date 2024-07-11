@@ -1,7 +1,7 @@
 name: Lint Code
 
 on: [push, pull_request]
-#hola
+
 jobs:
   lint:
     runs-on: ubuntu-latest
@@ -19,4 +19,4 @@ jobs:
       run: npm install
 
     - name: Run ESLint
-      run: npx eslint . --ext .js,.jsx,.ts,.tsx
+      run: npx eslint .
