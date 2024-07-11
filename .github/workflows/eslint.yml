@@ -1,6 +1,12 @@
 name: Lint Code
 
-on: [push, pull_request]
+on:
+  push:
+    branches:
+      - main  # ajusta esto según tus necesidades
+  pull_request:
+    branches:
+      - main  # ajusta esto según tus necesidades
 
 jobs:
   lint:
@@ -16,7 +22,16 @@ jobs:
         node-version: '16'
 
     - name: Install dependencies
-      run: npm install --legacy-peer-deps
+      run: |
+        npm install --legacy-peer-deps
+        npm install eslint --save-dev
+
+    - name: Debug information
+      run: |
+        npm --version
+        node --version
+        ls -la   # List files and permissions for debugging
 
     - name: Run ESLint
-      run: npx eslint . --ext .js,.jsx,.ts,.tsx
+      run: |
+        npx eslint . --ext .js,.jsx,.ts,.tsx
