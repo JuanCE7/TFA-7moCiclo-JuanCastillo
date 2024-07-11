@@ -1,12 +1,6 @@
 name: Lint Code
 
-on:
-  push:
-    branches:
-      - main  # ajusta esto según tus necesidades
-  pull_request:
-    branches:
-      - main  # ajusta esto según tus necesidades
+on: [push, pull_request]
 
 jobs:
   lint:
@@ -19,18 +13,10 @@ jobs:
     - name: Set up Node.js
       uses: actions/setup-node@v2
       with:
-        node-version: '16'
+        node-version: '14'
 
     - name: Install dependencies
-      run: |
-        npm install --legacy-peer-deps
-        npm install eslint --save-dev
-
-    - name: Debug permissions
-      run: |
-        ls -la   # Lista archivos y directorios con sus permisos
-        whoami   # Muestra el usuario actual
+      run: npm install
 
     - name: Run ESLint
-      run: |
-        npx eslint . --ext .js,.jsx,.ts,.tsx
+      run: npx eslint . --ext .js,.jsx,.ts,.tsx
